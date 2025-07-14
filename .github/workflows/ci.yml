@@ -1,0 +1,8 @@
+on: push
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - run: cat hello.c
+      - run: echo "::warning file=hello.c,line=2,col=3,endColumn=6,title=WARNING::unused variable"
